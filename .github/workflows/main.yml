@@ -28,8 +28,11 @@ jobs:
         with:
           version: '275.0.0'
           service_account_key: ${{ secrets.GCLOUD_TOKEN }}
-      - run: |
+      - name: Install Dependencies and Generate Dist
+        run: |
           npm i
           npm run prepare
+      - name: Set Project and Deploy to App Engine
+        run: |
           gcloud config set project active-valve-266110
           gcloud app deploy app.yml

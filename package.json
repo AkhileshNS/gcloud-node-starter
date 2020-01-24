@@ -4,7 +4,7 @@
   "description": "",
   "main": "dist/server.js",
   "scripts": {
-    "prestart": "tsc",
+    "prepare": "tsc",
     "start": "npm run serve",
     "serve": "node dist/server.js",
     "watch": "run-p watch-*",

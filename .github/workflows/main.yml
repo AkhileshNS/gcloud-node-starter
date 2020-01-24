@@ -24,8 +24,9 @@ jobs:
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v2.0.0
-      - uses: GoogleCloudPlatform/github-actions/setup-gcloud@master
+      - uses: actions-hub/gcloud@275.0.0
+        env:
+          PROJECT_ID: active-valve-266110
+          APPLICATION_CREDENTIALS: ${{secrets.GCLOUD_TOKEN}}
         with:
-          version: '275.0.0'
-          service_account_key: ${{ secrets.GCLOUD_TOKEN }}
-      - run: gcloud info
+          args: app deploy app.yaml

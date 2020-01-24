@@ -29,6 +29,5 @@ jobs:
           version: '275.0.0'
           service_account_key: ${{ secrets.GCLOUD_TOKEN }}
       - run: |
-          gcloud auth login
           gcloud config set project active-valve-266110
           gcloud app deploy app.yml

@@ -5,7 +5,7 @@ import helmet from 'helmet';
 
 // VARIABLES
 const app = express();
-const port = 8080; // 8080 is the default port GCP Looks for
+const port = process.env.PORT || 8080;
 
 // MIDDLEWARE
 app.use(compression());
